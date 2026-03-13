@@ -53,7 +53,7 @@
             color: #ff6b35;
         }
 
-        /* হিরো সেকশন (প্রথম ছবি) */
+        /* হিরো সেকশন */
         .hero-section {
             background: radial-gradient(circle at top right, #1a365d, #0b1828 70%);
             min-height: 100vh;
@@ -78,14 +78,16 @@
             line-height: 1.6;
             margin-bottom: 40px;
         }
+        /* ডাউনলোড বাটন স্টাইল */
         .download-btn {
+            display: inline-block;
             background: linear-gradient(135deg, #ff6b35, #ff3b00);
             color: white;
             padding: 16px 40px;
             border-radius: 30px;
             font-size: 18px;
             font-weight: bold;
-            border: none;
+            text-decoration: none;
             cursor: pointer;
             box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
             transition: transform 0.2s, box-shadow 0.2s;
@@ -93,19 +95,6 @@
         .download-btn:active {
             transform: scale(0.95);
         }
-        
-        /* ডাউনলোড মেসেজ */
-        #status-message {
-            display: none;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: rgba(255,255,255,0.1);
-            color: #60a5fa;
-            border-radius: 8px;
-            font-size: 14px;
-            animation: fadeIn 0.5s;
-        }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
         .scroll-down {
             margin-top: 60px;
@@ -124,7 +113,7 @@
             60% { transform: translateY(-5px); }
         }
 
-        /* বৈশিষ্ট্য সেকশন (দ্বিতীয় ও তৃতীয় ছবি) */
+        /* বৈশিষ্ট্য সেকশন */
         .features-section {
             background-color: #ffffff;
             padding: 80px 20px;
@@ -185,7 +174,7 @@
             line-height: 1.6;
         }
 
-        /* রিভিউ সেকশন (চতুর্থ ছবি) */
+        /* রিভিউ সেকশন */
         .reviews-section {
             background-color: #0b1828;
             padding: 80px 20px;
@@ -255,11 +244,8 @@
         <h1>Khelo E-sports</h1>
         <p>বাংলাদেশের সেরা টুর্নামেন্ট অ্যাপ – অংশ নিন, খেলুন এবং পুরস্কার জিতুন</p>
         
-        <button class="download-btn" onclick="startDownload()">অ্যাপ ডাউনলোড করুন</button>
-        
-        <div id="status-message">
-            ⏳ ব্রাউজারে রিডাইরেক্ট হচ্ছে...
-        </div>
+        <!-- সরাসরি ডাউনলোডের জন্য এংকর ট্যাগ ব্যবহার করা হলো -->
+        <a href="https://drive.google.com/uc?export=download&id=12sX9esrelrKfuUqCyhHZgbOfKCSxJv1J" class="download-btn">অ্যাপ ডাউনলোড করুন</a>
 
         <div class="scroll-down">
             নিচে স্ক্রল করুন
@@ -321,21 +307,6 @@
 
     <!-- ফুটার গ্রেডিয়েন্ট -->
     <div class="footer-bottom"></div>
-
-    <!-- ডাউনলোড জাভাস্ক্রিপ্ট -->
-    <script>
-        function startDownload() {
-            document.getElementById('status-message').style.display = 'block';
-            
-            // গুগল ড্রাইভের ডিরেক্ট ডাউনলোড লিংক
-            var driveLink = "https://drive.google.com/uc?export=download&id=12sX9esrelrKfuUqCyhHZgbOfKCSxJv1J";
-            
-            // এক্সটার্নাল ব্রাউজার ওপেন করবে
-            setTimeout(function() {
-                window.open(driveLink, '_blank');
-            }, 800);
-        }
-    </script>
 
 </body>
 </html>
